@@ -5,36 +5,77 @@
 		<style>
             body{
                 background-color: blanchedalmond;
+                margin-left: 0;
             }
-			p {
-				color: black;
-			}
-			img {
-				max-width: 100%;
-			}
-
+            body h1, body h2, body p, body div{
+                margin-left: 30px;
+            }
             footer {
                 position: absolute;
                 width: 100%;
                 height: 250px;
                 bottom: 0;
-                background-color: #e3d0a5;
+                background-color: rgb(237, 217, 189);
             }
+            footer h2, footer p {
+            margin-left: 30px;
+            }
+            #selectedItem{
+                background-color: rgb(237, 217, 189);
+                padding: 20px;
+                width: 50%;
+                border-radius: 10px;
+            }
+
 		</style>
 	</head>
+
 	<body>
-		<h1>Survival Strategy</h1>
+		<h1>Our Solution</h1>
+        <h2>Desert Survival Strategy</h2>
 		<p>our behavier</p>
-		<p>second</p>
-		<!-- <img src="/_assets/images/example.jpg" alt="예시 이미지">
-		<a href="https://uxkm.io/" target="_blank">UXKM 바로가기</a> -->
+
+        <h2>Top 5 Items for Survival</h2>
+        <div>
+        <label><input type="radio" name="item" value="item1" onclick="showItem()" checked> 1. item1</label>
+        <label><input type="radio" name="item" value="item2" onclick="showItem()"> 2. item2</label>
+        <label><input type="radio" name="item" value="item3" onclick="showItem()"> 3. item3</label>
+        <label><input type="radio" name="item" value="item4" onclick="showItem()"> 4. item4</label>
+        <label><input type="radio" name="item" value="item5" onclick="showItem()"> 5. item5</label>
+        </div>
+        <p id="selectedItem"></p>
+
+        <h2><a href="index.html">Back to Instruction</a></h2>
 	</body>
     <footer>
-        <p>Ryan Gehling - gehlingr1@nku.edu</p>
-        <p>Alice Nguyen - nguyena6@nku.edu</p>
-        <p>Naeun Kim - kimn@nku.edu</p>
-        <p>Serenity Newell-Goodwin - newellgoos1@nku.edu</p>
-        <p>Stacey Sanchez Gomez - sanchezgos1@nku.edu</p>
-        <p>Mason Miller - @nku.edu</p>
+        <h2>Team Members</h2>
+        <p>Ryan Gehling - gehlingr1@nku.edu<br>
+        Naeun Kim - kimn5@nku.edu<br>
+        Alice Nguyen - nguyena6@nku.edu<br>
+        Serenity Newell-Goodwin - newellgoos1@nku.edu<br>
+        Stacey Sanchez Gomez - sanchezgos1@nku.edu<br>
+        Mason Miller - millerm106@nku.edu</p>
     </footer>
+
+    <script>
+        var itemDescriptions = {
+            item1: "item1's decs",
+            item2: "item2's decs",
+            item3: "item3's decs",
+            item4: "item4's decs",
+            item5: "item5's decs"
+        };
+
+        function showItem() {
+            var radio = document.getElementsByName("item");
+
+            for (var i = 0; i < radio.length; i++) {
+                if (radio[i].checked) {
+                    var selected = radio[i].value;
+                    document.getElementById("selectedItem").innerHTML = selected + " - " + itemDescriptions[selected];
+                }
+            }
+        }
+        showItem();
+    </script>
 </html>
