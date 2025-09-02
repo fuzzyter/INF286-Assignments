@@ -5,26 +5,36 @@
 		<style>
             body{
                 background-color: blanchedalmond;
-                margin-left: 0;
+                margin:0;
             }
             body h1, body h2, body p, body div{
                 margin-left: 30px;
+                margin-right: 30px;
+            }
+            body p{
+                margin-bottom: 50px;
             }
             footer {
-                position: absolute;
+                position: relative;
                 width: 100%;
-                height: 250px;
+                height: 200px;
                 bottom: 0;
                 background-color: rgb(237, 217, 189);
+                margin: 0;
+                padding-top: 10px;
             }
-            footer h2, footer p {
+            footer h4, footer p {
             margin-left: 30px;
+            padding: 0;
             }
             #selectedItem{
                 background-color: rgb(237, 217, 189);
                 padding: 20px;
                 width: 50%;
                 border-radius: 10px;
+            }
+            label{
+                margin-right: 15px;
             }
 
 		</style>
@@ -33,23 +43,52 @@
 	<body>
 		<h1>Our Solution</h1>
         <h2>Desert Survival Strategy</h2>
-		<p>our behavier</p>
+		<p>After the devastating plane crash, our team and the other survivors were shaken up.
+            We only had time to grab a few items we could only assume would be helpful in the long run,
+            little did we know it would lead to our demise. The co-captain ran to try and grab a 6th
+            but that's when the plane went up in flames. We watched in horror as the rest of our belongings burnt into ash.
+            The heat of the sun was beating down on us and helped us realise the severity of our situation.
+            We quickly had to make a decision, we must waste no time and press forward,
+            it wouldn’t be long before the sand would make claim to us. <br><br>
+
+	        Hours passed, we were too sweaty and exhausted to even talk to each other.
+            That's when the other crew member who survived came up with the idea that we should dig a dune to hide
+            behind to block the sun and rest. We decided we were gonna ration our water but then we saw some of it had
+            evaporated in the heat. So now we have less water, oh great. But we weren’t ready to lose hope yet.
+            We drank enough to quench our thirst and waited for nightfall. <br><br>
+
+	        As the sun went down and the temperature began to cool, that’s when we began our hike again.
+            This cycle repeated until we were at our few last drops of water. People were getting agitated fast,
+            we hadn’t been able to keep up with any of the desert animals, nor get close enough to be able to kill
+            something with only a pocket knife. Things were looking grim.<br><br>
+
+	        The next day, the heat started to get to Ryan. Everyone began to notice him talking and laughing to himself,
+            staring off into the distance. Whispers spread among us. But it didn't take long for us all to start losing our minds.
+            We all were hallucinating and going mad. Ryan mentioned to our group, excluding the co-captain and the crew member,
+            telling us the ‘sun-god’ said he would spare us if we made sacrifices. It wasn’t hard to convince us, we were crazy!!
+            That night when they went to sleep is when our plan went into action. Alice and Naeun began to draw a summoning circle.
+            Stacy and Mayson tied the two unsuspecting victims up with our rope. Then Serenity and Ryan grabbed some rubbing
+            alcohol from the first aid kit, and traced the outside of the circle. They threw the two into the circle and then
+            Serenity striked a match, setting the circle on fire. The group danced and laughed around the circle,
+            as the circle started to take the shape of the so-called sun god they spoke of. They danced all night until
+            they were so exhausted their bodies gave out. Was that really the sun god they saw or were they just crazy?
+            Mmm, probably just crazy. But it was a fun adventure with friends regardless!</p>
 
         <h2>Top 5 Items for Survival</h2>
         <div>
-        <label><input type="radio" name="item" value="item1" onclick="showItem()" checked> 1. item1</label>
-        <label><input type="radio" name="item" value="item2" onclick="showItem()"> 2. item2</label>
-        <label><input type="radio" name="item" value="item3" onclick="showItem()"> 3. item3</label>
-        <label><input type="radio" name="item" value="item4" onclick="showItem()"> 4. item4</label>
-        <label><input type="radio" name="item" value="item5" onclick="showItem()"> 5. item5</label>
+        <label><input type="radio" name="item" value="item1" onclick="showItem()" checked> 1. 15 Gallons of water</label>
+        <label><input type="radio" name="item" value="item2" onclick="showItem()"> 2. First aid kit</label>
+        <label><input type="radio" name="item" value="item3" onclick="showItem()"> 3. Single-blade pocketknife</label>
+        <label><input type="radio" name="item" value="item4" onclick="showItem()"> 4. 20 Feet of nylon rope</label>
+        <label><input type="radio" name="item" value="item5" onclick="showItem()"> 5. Book of matches</label>
         </div>
         <p id="selectedItem"></p>
 
         <h2><a href="index.html">Back to Instruction</a></h2>
 	</body>
     <footer>
-        <h2>Team Members</h2>
-        <p>Ryan Gehling - gehlingr1@nku.edu<br>
+        <p><b>Team Members</b><br>
+        Ryan Gehling - gehlingr1@nku.edu<br>
         Naeun Kim - kimn5@nku.edu<br>
         Alice Nguyen - nguyena6@nku.edu<br>
         Serenity Newell-Goodwin - newellgoos1@nku.edu<br>
@@ -59,11 +98,11 @@
 
     <script>
         var itemDescriptions = {
-            item1: "item1's decs",
-            item2: "item2's decs",
-            item3: "item3's decs",
-            item4: "item4's decs",
-            item5: "item5's decs"
+            item1: "We will ration the water out depending on how tired we are and how long we will be outside.",
+            item2: "In case of injury, we have a quick way of taking care of ourselves. In this case we used rubbing alcohol for fire.",
+            item3: "For hunting or cutting clothes and rope.",
+            item4: "In case we need to tie something up, or if someone falls down a sand dune. We used it for tying up the co-captain and the crew member.",
+            item5: "To light fires. We lit the rubbing alcohol with the matches."
         };
 
         function showItem() {
@@ -72,7 +111,7 @@
             for (var i = 0; i < radio.length; i++) {
                 if (radio[i].checked) {
                     var selected = radio[i].value;
-                    document.getElementById("selectedItem").innerHTML = selected + " - " + itemDescriptions[selected];
+                    document.getElementById("selectedItem").innerHTML = itemDescriptions[selected];
                 }
             }
         }
