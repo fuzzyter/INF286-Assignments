@@ -1,7 +1,7 @@
 # INF 286 Desert Survival Game
 INF 286
 
-## Team Members
+## Team Members!
 
 **Ryan Gehling** - gehlingr1@nku.edu  /  writing index.html  
 **Naeun Kim** - kimn5@nku.edu   /   writing solution.html  
