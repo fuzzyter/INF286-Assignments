@@ -7,5 +7,5 @@ INF 286 Assignment 02
 **Naeun Kim** - kimn5@nku.edu   /   writing solution.html  
 **Alice Nguyen** - nguyena6@nku.edu   /   selecting top 5 items, writing solution.html  
 **Serenity Newell-Goodwin** - newellgoos1@nku.edu   /   writing the story about strategy  
-**Stacey Sanchez Gomez** - sanchezgos1@nku.edu   /   wrote README.md
+**Stacey Sanchez Gomez** - sanchezgos1@nku.edu   /   wrote README.md <br>
 **Mason Miller** - millerm106@nku.edu   /   writing the story about strategy  
