@@ -1,5 +1,5 @@
 # INF 286 Desert Survival Game
-INF 286 Assignment 02
+INF 286
 
 ## Team Members
 
