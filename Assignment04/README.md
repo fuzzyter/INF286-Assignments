@@ -1,5 +1,5 @@
-# INF 286 Desert Survival Game
-INF 286 Assignment 02
+# INF 286 Forms for Musk
+INF 286 Assignment 04
 
 ## Team Members
 
@@ -8,4 +8,4 @@ INF 286 Assignment 02
 **Alice Nguyen** - nguyena6@nku.edu   /   task 1, payment.html  
 **Serenity Newell-Goodwin** - newellgoos1@nku.edu   /   thankyou.html  
 **Stacey Sanchez Gomez** - sanchezgos1@nku.edu   /   delivery.html  
-**Mason Miller** - millerm106@nku.edu   /   idk lol  
+**Mason Miller** - millerm106@nku.edu   /   thinking about decoration idea and role distribution  
