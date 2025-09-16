@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customize Car</title>
+    <style>
+        h2 {
+            text-decoration: underline;
+        }
+
+        hr {
+            width: 50%;
+            margin-left: 0;
+        }
+
+        #battery_capacity_slider {
+            width: 50%;
+        }
+
+        #battery_capacity_list {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+        }
+
+        #range_miles_slider {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="menu.html">
+        <button id="menu">Back to Menu</button>
+    </a>
+
+    <h1>Customize Car</h1>
+    <hr>
+
+    <form>
+        <h2>Main Settings</h2>
+
+        <h3>Engine Type</h3>
+        <input type="radio" id="engine_type_0" name="engine_type" value="0" required>
+        <label for="engine_type_0">Slow</label>
+        <br>
+        <input type="radio" id="engine_type_1" name="engine_type" value="1">
+        <label for="engine_type_1">Medium</label>
+        <br>
+        <input type="radio" id="engine_type_2" name="engine_type" value="2">
+        <label for="engine_type_2">Fast</label>
+        <br>
+
+        <h3>Battery Capacity</h3>
+        <input type="range" id="battery_capacity_slider" name="battery_capacity" step="1" min="0" max="11" value="0"
+            list="battery_capacity_list">
+        <datalist id="battery_capacity_list">
+            <option value="0" label="1h"></option>
+            <option value="1" label="3h"></option>
+            <option value="2" label="5h"></option>
+            <option value="3" label="10h"></option>
+            <option value="4" label="15h"></option>
+            <option value="5" label="24h"></option>
+            <option value="6" label="48h"></option>
+            <option value="7" label="72h"></option>
+            <option value="8" label="1w"></option>
+            <option value="9" label="2w"></option>
+            <option value="10" label="4w"></option>
+            <option value="11" label="8w"></option>
+        </datalist>
+
+        <h3>Desired Range</h3>
+        <input type="range" id="range_miles_slider" name="range_miles" step="1" min="0" max="300" value="100"
+            oninput="document.getElementById('range_miles_view').value=this.value">
+        <br>
+        <label for="range_miles_slider"><output id="range_miles_view">100</output> Miles</label>
+
+        <h3>Chassis Color</h3>
+        <input type="color" name="chassis_color">
+
+        <h2>Add-On Features</h2>
+
+        <h3>Premium Feature</h3>
+        <input type="radio" id="premium_feature_0" name="premium_feature" value="0">
+        <label for="premium_feature_0">Auto-Pilot</label>
+        <br>
+        <input type="radio" id="premium_feature_1" name="premium_feature" value="1">
+        <label for="premium_feature_1">In-Car Robot Butler</label>
+        <br>
+        <input type="radio" id="premium_feature_2" name="premium_feature" value="2">
+        <label for="premium_feature_2">Ejectable Seats</label>
+        <br>
+
+        <h3>Access Code</h3>
+        <label for="access_code_textbox">Secret Word:</label><br>
+        <input type="text" id="access_code_textbox" name="access_code">
+
+        <h2>Ancillary Features</h2>
+
+        <h3>Exterior</h3>
+        <input type="checkbox" id="exterior_feature_0" name="exterior_feature_0">
+        <label for="exterior_feature_0">Square Tires</label>
+        <br>
+        <input type="checkbox" id="exterior_feature_1" name="exterior_feature_1">
+        <label for="exterior_feature_1">Spiky Tires</label>
+        <br>
+        <input type="checkbox" id="exterior_feature_2" name="exterior_feature_2">
+        <label for="exterior_feature_2">Water Tires</label>
+        <br>
+        <input type="checkbox" id="exterior_feature_3" name="exterior_feature_3">
+        <label for="exterior_feature_3">No Tires</label>
+        <br>
+
+        <h3>Interior</h3>
+        <input type="checkbox" id="interior_feature_0" name="interior_feature_0">
+        <label for="interior_feature_0">Reversed Seats</label>
+        <br>
+        <input type="checkbox" id="interior_feature_1" name="interior_feature_1">
+        <label for="interior_feature_1">Cute Puppies On The Back Seat</label>
+        <br>
+        <input type="checkbox" id="interior_feature_2" name="interior_feature_2">
+        <label for="interior_feature_2">Bruno Mars In The Passenger Seat</label>
+        <br>
+        <input type="checkbox" id="interior_feature_3" name="interior_feature_3">
+        <label for="interior_feature_3">Jacuzzi In The Trunk</label>
+        <br>
+        <input type="checkbox" id="interior_feature_4" name="interior_feature_4">
+        <label for="interior_feature_4">Integrated TV Showing Home Alone 24/7</label>
+        <br>
+
+        <h2>Warranty</h2>
+        <input type="number" id="warranty_number" name="warranty_years" value="0">
+        <label for="warranty_number">Year Warranty</label>
+        <br><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
