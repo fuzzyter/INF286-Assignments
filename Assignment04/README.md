@@ -8,4 +8,4 @@ INF 286 Assignment 04
 **Alice Nguyen** - nguyena6@nku.edu   /   task 1, payment.html  
 **Serenity Newell-Goodwin** - newellgoos1@nku.edu   /   thankyou.html  
 **Stacey Sanchez Gomez** - sanchezgos1@nku.edu   /   delivery.html  
-**Mason Miller** - millerm106@nku.edu   /   thinking about decoration idea and role distribution  
+**Mason Miller** - millerm106@nku.edu   /   README.md, thinking about decoration idea and role distribution  

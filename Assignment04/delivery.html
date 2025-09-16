@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Delivery</title>
-    <style>
-
-      input {
-        margin: 20px 5px 20px 20px;
-        padding: 10px;
-      }
-
-    </style>
+  <title>Delivery</title>
+  <style>
+    input {
+      margin: 20px 5px 20px 20px;
+      padding: 10px;
+    }
+  </style>
 </head>
 
 <body>
@@ -23,19 +22,20 @@
     <label for="lname">Last name</label><br>
     <input type="text" id="lname" name="lname" required>
     <br>
-    Country
-            <select>
-                <option value=""></option>
-                <option value="English">United States</option>
-                <option value="Spanish">Mexico</option>
-                <option value="French">France</option>
-                <option value="Chinese">China</option>
-                <option value="Korean">Sounth Korea</option>
-                <option value="Japanese">Japan</option>
-                <option value="Italian">Italy</option>
-                <option value="Russian">Russia</option>
-                <option value="German">Germany</option>
-            </select> <br>
+    <label for="country">Country</label>
+    <select id="country" name="country" required>
+      <option value=""></option>
+      <option value="English">United States</option>
+      <option value="Spanish">Mexico</option>
+      <option value="French">France</option>
+      <option value="Chinese">China</option>
+      <option value="Korean">Sounth Korea</option>
+      <option value="Japanese">Japan</option>
+      <option value="Italian">Italy</option>
+      <option value="Russian">Russia</option>
+      <option value="German">Germany</option>
+    </select>
+    <br><br>
     <label for="staddress">Street address</label><br>
     <input type="text" id="staddress" name="staddress">
     <br>
@@ -92,10 +92,11 @@
     <br>
     <button>Submit</button>
 
-  </form> 
+  </form>
   <a href="menu.html">
     <button id="menu">Back to Menu</button>
   </a>
 
 </body>
+
 </html>
