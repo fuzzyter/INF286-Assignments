@@ -5,31 +5,30 @@
 
 <body>
     <h1>Welcome to Tesla automotive</h1>
-    <form>
-        <table width="100%">
-            <td>
-                <form width="100%">
-                    <h4>Register your account</h4>
-                    <p>Are you a new customer? Create an account here</p>
-                    <label>Email</label>
-                    <input type="text" />
-                    <input type="text" />
-                    <input type="submit" />
-                </form>
-            </td>
-            <td>
-                <form action="100%" method="GET">
-                    <h4>Access your account</h4>
-                    <p>Do you already have an account? Enter your credentials here</p>
-                    <label>Email</label>
-                    <input type="text" />
-                    <label>Password</label>
-                    <input type="text" />
-                    <input type="reset" />
-                </form>
-            <td>
-        </table>
-    </form>
+    <table width="100%">
+        <td>
+            <form action="/register.php">
+                <h4>Register your account</h4>
+                <p>Are you a new customer? Create an account here</p>
+                <label for="register_email">Email</label>
+                <input type="text" id="register_email" name="email" required>
+                <label for="register_password">Password</label>
+                <input type="text" id="register_password" name="password" required>
+                <input type="submit">
+            </form>
+        </td>
+        <td>
+            <form action="/login.php">
+                <h4>Access your account</h4>
+                <p>Do you already have an account? Enter your credentials here</p>
+                <label for="login_email">Email</label>
+                <input type="text" id="login_email" name="email" required>
+                <label for="login_password">Password</label>
+                <input type="text" id="login_password" name="password" required>
+                <input type="submit">
+            </form>
+        <td>
+    </table>
 
 </body>
 
