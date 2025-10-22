@@ -1,20 +1,22 @@
-<!doctype html>
-<!-- This page contains at least 9 errors -->
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<title>I love music</title>
+		<meta charset="UTF-8">
+		<title>I Love Music</title>
 	</head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<body>
-	<table
+	<table>
 		<tr>
-			<td><a href="#">Home page</a></td>
-			<td><a href="#">Personal interests: art</a></td>
-			<td><a href="#">Personal interests: music</a></td>
-			<td><a href="#">Personal interests: puppies</a></td>
-			<td><a href="#">Personal interests: super heroes</a></td>
-			<td><a href="#">Contact me</a></td>
-			<td><a href="#">Work</a></td>
+			<td><a href="index.html">Home page</a></td>
+			<td><a href="art.html">Personal interests: art</a></td>
+			<td><a href="music.html">Personal interests: music</a></td>
+			<td><a href="puppies.html">Personal interests: puppies</a></td>
+			<td><a href="super-heroes.html">Personal interests: super heroes</a></td>
+			<td><a href="contact-ME.html">Contact me</a></td>
+			<td><a href="work.html">Work</a></td>
 		</tr>
 	</table>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/2CDGNtF0asg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/-jzHwhWeWCI?si=QyBPfRFSV_HrpOsI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 	</body>
 </html>
