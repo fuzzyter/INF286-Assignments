@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch & Lap List - JS + jQuery Lab</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #222;
+            margin-bottom: 1rem;
+        }
+
+        .stopwatch {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+            width: 300px;
+        }
+
+        #display {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .controls button {
+            background: #0077ff;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            margin: 0.2rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .controls button:hover {
+            background: #005ad1;
+        }
+
+        ul#laps {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        #laps li {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 0.5rem;
+            margin: 0.3rem 0;
+        }
+
+        #about {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #555;
+            max-width: 500px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>⏱ Stopwatch & Lap List</h1>
+
+    <div class="stopwatch" aria-live="polite">
+        <div id="display">00:00:00</div>
+        <div class="controls">
+            <button id="startBtn">Start</button>
+            <button id="stopBtn">Stop</button>
+            <button id="resetBtn">Reset</button>
+            <button id="lapBtn">Lap</button>
+        </div>
+        <ul id="laps" aria-label="Lap times list"></ul>
+    </div>
+
+    <div id="about">
+        <p><strong>About this component:</strong> This stopwatch is powered by Evil Team.
+        </p>
+    </div>
+
+    <script>
+        let startTime = 0;
+        let elapsedTime = 0;
+        let timerInterval;
+        let laps = [];
+
+        const display = document.getElementById("display");
+        const lapsList = document.getElementById("laps");
+
+        function timeToString(time) {
+            let diffInHrs = time / 3600000;
+            let hh = Math.floor(diffInHrs);
+
+            let diffInMin = (diffInHrs - hh) * 60;
+            let mm = Math.floor(diffInMin);
+
+            let diffInSec = (diffInMin - mm) * 60;
+            let ss = Math.floor(diffInSec);
+
+            let formattedHH = hh.toString().padStart(2, "0");
+            let formattedMM = mm.toString().padStart(2, "0");
+            let formattedSS = ss.toString().padStart(2, "0");
+
+            return `${formattedHH}:${formattedMM}:${formattedSS}`;
+        }
+
+        function start() {
+            startTime = Date.now() - elapsedTime;
+            timerInterval = setInterval(() => {
+                elapsedTime = Date.now() - startTime;
+                display.textContent = timeToString(elapsedTime);
+            }, 1000);
+        }
+
+        function stop() {
+            clearInterval(timerInterval);
+        }
+
+        function reset() {
+            clearInterval(timerInterval);
+            display.textContent = "00:00:00";
+            elapsedTime = 0;
+            laps = [];
+            $("#laps").fadeOut(200, function () {
+                $(this).empty().fadeIn(200);
+            });
+        }
+
+        function addLap() {
+            const lapTime = timeToString(elapsedTime);
+            laps.push(lapTime);
+            const lapItem = $("<li></li>").text(`Lap ${laps.length}: ${lapTime}`);
+            lapItem.hide().fadeIn(400); // jQuery fadeIn effect
+            $("#laps").append(lapItem);
+        }
+
+        document.getElementById("startBtn").addEventListener("click", start);
+        document.getElementById("stopBtn").addEventListener("click", stop);
+        document.getElementById("resetBtn").addEventListener("click", reset);
+        document.getElementById("lapBtn").addEventListener("click", addLap);
+
+        // Keyboard accessibility
+        document.addEventListener("keydown", (e) => {
+            if (e.key === " " || e.key === "Enter") {
+                if (document.activeElement.id === "startBtn") start();
+                if (document.activeElement.id === "stopBtn") stop();
+                if (document.activeElement.id === "resetBtn") reset();
+                if (document.activeElement.id === "lapBtn") addLap();
+            }
+        });
+    </script>
+</body>
+
+</html>
