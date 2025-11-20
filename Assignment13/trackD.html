@@ -95,9 +95,32 @@
         <ul id="laps" aria-label="Lap times list"></ul>
     </div>
 
-    <div id="about">
-        <p><strong>About this component:</strong> This stopwatch is powered by Evil Team.
-        </p>
+    <div id="about" >
+        <h2>About This Page</h2>
+        <p><strong>Component: Stopwatch with Lap Tracking</strong><br>
+        A stopwatch that tracks elapsed time and records lap times. Uses an array (<code>laps[]</code>) to store all lap data. Features start, stop, reset, and lap recording buttons.</p>
+        
+        <p><strong>Array Usage:</strong><br>
+        The <code>laps</code> array dynamically stores each recorded lap time, demonstrating data-driven DOM manipulation.</p>
+        
+        <p><strong>jQuery Effects:</strong><br>
+        - <code>fadeIn(400)</code> - Smooth fade-in animation when adding new lap times<br>
+        - <code>fadeOut(200)</code> then <code>fadeIn(200)</code> - Animated clearing of the lap list on reset<br>
+        - jQuery selectors <code>$("#laps")</code> and <code>$("&lt;li&gt;")</code> for efficient DOM manipulation</p>
+        
+        <p><strong>Time-Based Effect:</strong><br>
+        Uses <code>setInterval()</code> to update the stopwatch display every second while the timer is running.</p>
+        
+        <p><strong>Event Listeners:</strong><br>
+        Four click event listeners (start, stop, reset, lap) plus keyboard event listener for accessibility (Space/Enter keys).</p>
+        
+        <p><strong>Named Functions:</strong><br>
+        <code>start()</code>, <code>stop()</code>, <code>reset()</code>, <code>addLap()</code>, and <code>timeToString()</code> handle all stopwatch logic and rendering.</p>
+        
+        <p><strong>Accessibility:</strong><br>
+        Uses semantic <code>&lt;button&gt;</code> elements, ARIA labels (<code>aria-live="polite"</code>), and keyboard navigation support for inclusive user experience.</p>
+        
+        <p><em>Built by Evil Team</em></p>
     </div>
 
     <script>
