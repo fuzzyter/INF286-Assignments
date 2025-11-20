@@ -5,66 +5,127 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Quiz Deck - JS + jQuery Component Lab</title>
-    <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     <style>
-        body { 
+    <style>
+        body {
+            --brand: #555555;
+            --accent: #888888;
             font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-            line-height:1.55;
-            margin:20px; 
+            line-height: 1.55;
+            margin: 20px;
         }
 
-        .quiz-container { 
-            max-width:900px;
-            margin:0 auto;
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .row {
-            display:flex;
-            gap:12px; 
-            flex-wrap:wrap; 
-            align-items:center; 
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
         }
 
-        .card { 
-            border:1px solid #eee; 
-            border-radius:10px; 
-            padding:12px; 
-            margin:12px 0; 
+        .card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 12px;
+            margin: 12px 0;
         }
 
         button {
-            background:var(--brand); 
-            color:#fff; 
-            border:0; 
-            padding:10px 14px; 
-            border-radius:8px; 
-            cursor:pointer;
+            background: var(--brand);
+            color: #fff;
+            border: 0;
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
         }
 
-        button:hover { 
-            background:var(--accent);
-        }
-         
-        button:focus { 
-            outline:3px solid #111; 
-            outline-offset:2px; 
+        button:hover {
+            background: var(--accent);
         }
 
-        .flash { 
-            box-shadow: 0 0 0 4px #ff66c450; 
-            transition: box-shadow .3s ease; 
+        button:focus {
+            outline: 3px solid #111;
+            outline-offset: 2px;
         }
-    [role="status"] { position:absolute; left:-9999px; }
-  </style>
+
+        .flash {
+            box-shadow: 0 0 0 4px #ff66c450;
+            transition: box-shadow .3s ease;
+        }
+
+        [role="status"] {
+            color: #888888;
+        }
+    </style>
 </head>
+
 <body>
-    <div class = "quiz-container">
-    <h1>Quiz Deck</h1>
-    <div id="choices" class="row"></div>
-    <div class="row">
-        <button id="prev">Prev</button>
-        <button id="next">Next</button>
-        <button id="finish">Finish</button>
-    </div>
+    <div class="quiz-container">
+        <h1>Quiz Deck</h1>
+        <p id="question"></p>
+        <div id="choices" class="row"></div>
+        <p id="message-box" role="status" aria-live="polite" hidden></p>
+        <hr>
+        <div class="row">
+            <button id="prev">Prev</button>
+            <button id="next">Next</button>
+            <button id="finish">Finish</button>
+        </div>
         <p id="score">Score: 0</p>
+    </div>
+
+    <script>
+        const QUIZ_ITEMS = [
+            { q: "JS runs primarily in the _____.", choices: ["database", "browser", "router"], answer: 1 },
+            { q: "DOM lets JS change the page's _____.", choices: ["network", "structure", "battery"], answer: 1 }
+        ];
+
+        let score = 0;
+        let qIdx = 0;
+
+        const questionElement = $('#question')[0];
+        const choicesElement = $('#choices')[0];
+        const scoreElement = $('#score')[0];
+
+        function repaintQuestion() {
+            const item = QUIZ_ITEMS[qIdx];
+            questionElement.textContent = (qIdx + 1) + ". " + item.q;
+            choicesElement.innerHTML = "";
+            item.choices.forEach((text, idx) => {
+                const btn = document.createElement('button');
+                btn.textContent = text;
+                btn.addEventListener('click', () => {
+                    if (idx === item.answer) {
+                        say("Correct");
+                        score++;
+                        qIdx++;
+                        repaintQuestion();
+                    } else {
+                        say("Try again");
+                    }
+                    scoreElement.textContent = "Score: " + score;
+                });
+                choicesElement.appendChild(btn);
+            });
+        }
+
+        function say(message) {
+            const msgBox = $('#message-box');
+            msgBox.stop(true, true).hide();
+            msgBox[0].textContent = message;
+            msgBox.fadeIn(1000).delay(8000).fadeOut(1000);
+        }
+
+        $('#prev')[0].addEventListener('click', () => { qIdx = Math.max(0, qIdx - 1); repaintQuestion(); });
+        $('#next')[0].addEventListener('click', () => { qIdx = Math.min(QUIZ_ITEMS.length - 1, qIdx + 1); repaintQuestion(); });
+        $('#finish')[0].addEventListener('click', () => say("Finished! Score: " + score + "/" + QUIZ_ITEMS.length));
+
+        repaintQuestion();
+    </script>
+</body>
+
+</html>
