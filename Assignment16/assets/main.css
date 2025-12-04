@@ -1,3 +1,33 @@
 #logo {
     font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+}
+
+.navbar {
+    width: 90%;
+}
+
+.logo-top-text {
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+    font-variant: small-caps;
+    line-height: 1.0;
+}
+
+.logo-img {
+    width: 2.75em;
+}
+
+.logo-bottom-text {
+    font-size: 0.78em;
+    line-height: 1.0;
+    color: #444444;
+}
+
+#search {
+    max-width: 50%;
+}
+
+.search-thumbnail {
+    height: 50px;
 }

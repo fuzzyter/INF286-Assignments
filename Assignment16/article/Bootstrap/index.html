@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wikipedia, the free encyclopedia</title>
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/assets/main.css">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand mx-auto py-1 my-0">
+        <div id="logo" class="navbar-brand mx-2 d-flex align-items-center">
+            <img src="/assets/logo.png" alt="Brand Logo" class="logo-img me-2">
+            <div class="d-flex flex-column">
+                <span class="logo-top-text">WikipediA</span>
+                <span class="d-inline-flex justify-content-center logo-bottom-text">The Free Encyclopedia</span>
+            </div>
+        </div>
+
+        <div id="search" class="dropdown mx-auto flex-grow-1" tabindex="-1">
+            <input id="search-input" class="form-control" type="search" autocomplete="off" autocorrect="off"
+                spellcheck="false" autocapitalize="off" placeholder="Search" aria-label="Search"
+                aria-expanded="false" />
+            <ul id="search-dropdown" class="dropdown-menu w-100">
+                <!-- this gets filled in by javascript -->
+            </ul>
+        </div>
+
+        <a class="btn btn-outline-success mx-2" href="/donate.html">Donate</a>
+        <a class="btn btn-outline-secondary mx-2" href="/preferences.html">Preferences</a>
+    </nav>
+</head>
+
+<body>
+    <div class="container-fluid w-75 border-top">
+        <div class="d-flex justify-content-between">
+            <h1>Bootstrap</h1>
+            <a class="my-auto btn btn-outline-secondary disabled" href="talk.html">Talk (Unavailable)</a>
+        </div>
+        <p>
+            Bootstrap (formerly Twitter Bootstrap) is a free and open-source CSS framework directed at responsive,
+            mobile-first
+            front-end web development. It contains HTML, CSS and (optionally) JavaScript-based design templates for
+            typography,
+            forms, buttons, navigation, and other interface components.
+
+            As of May 2023, Bootstrap is the 17th most starred project (4th most starred library) on GitHub, with over
+            164,000
+            stars. According to W3Techs, Bootstrap is used by 19.2% of all websites.
+        </p>
+        <p>
+            Bootstrap is an HTML, CSS and JS library that focuses on simplifying the development of informative web
+            pages (as
+            opposed to web applications). The primary purpose of adding it to a web project is to apply Bootstrap's
+            choices of
+            color, size, font and layout to that project. As such, the primary factor is whether the developers in
+            charge find those
+            choices to their liking. Once added to a project, Bootstrap provides basic style definitions for all HTML
+            elements. The
+            result is a uniform appearance for prose, tables and form elements across web browsers. In addition,
+            developers can take
+            advantage of CSS classes defined in Bootstrap to further customize the appearance of their contents. For
+            example,
+            Bootstrap has provisioned for light- and dark-colored tables, page headings, more prominent pull quotes, and
+            text with a
+            highlight.
+
+            Bootstrap also comes with several JavaScript components which do not require other libraries like jQuery.
+            They provide
+            additional user interface elements such as dialog boxes, tooltips, progress bars, navigation drop-downs, and
+            carousels.
+            Each Bootstrap component consists of an HTML structure, CSS declarations, and in some cases accompanying
+            JavaScript
+            code. They also extend the functionality of some existing interface elements, including for example an
+            auto-complete
+            function for input fields.
+        </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+search bar
+stylized colors
+article page:
+    - sidebar at top, image on the left and stats on the right
+    - main text under that
+    - left sidebar still has navigation
+preferences page
