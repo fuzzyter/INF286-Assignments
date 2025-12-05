@@ -41,10 +41,6 @@
     white-space: inherit !important;
 }
 
-.navigation-list {
-    list-style-type: none;
-}
-
 h2 {
     border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
 }

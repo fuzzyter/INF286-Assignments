@@ -89,7 +89,6 @@ function populateSearch(searchTerm) {
 }
 
 function populateArticleNavigation() {
-    console.log("hi");
     const articleContent = document.getElementById("article-content");
     const mainList = document.getElementById("main-navigation-list");
 
@@ -114,7 +113,6 @@ function populateArticleNavigation() {
             } else {
                 // create and add sublist
                 destList = document.createElement("ul");
-                destList.classList.add("navigation-list");
                 currentH2Entry.appendChild(destList);
             }
         } else {
