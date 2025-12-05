@@ -14,11 +14,13 @@ $gray-800: shade-color($white, 80%);
 $gray-900: shade-color($white, 90%);
 
 $body-bg: #fff5e3;
-$body-secondary-bg: shade-color($body-bg, 20%);
-$body-tertiary-bg: shade-color($body-bg, 10%);
+$body-secondary-bg: shade-color($body-bg, 10%);
+$body-tertiary-bg: shade-color($body-bg, 5%);
 
 $input-bg: $white;
 $dropdown-bg: $white;
 $dropdown-link-hover-bg: $gray-100;
+
+$card-bg: $body-tertiary-bg;
 
 @import "../node_modules/bootstrap/scss/bootstrap";

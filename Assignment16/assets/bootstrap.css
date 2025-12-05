@@ -86,12 +86,12 @@
   --bs-emphasis-color-rgb: 0, 0, 0;
   --bs-secondary-color: rgba(25.5, 25, 24.2, 0.75);
   --bs-secondary-color-rgb: 25, 25, 24;
-  --bs-secondary-bg: rgb(204, 196, 181.6);
-  --bs-secondary-bg-rgb: 204, 196, 182;
+  --bs-secondary-bg: rgb(229.5, 220.5, 204.3);
+  --bs-secondary-bg-rgb: 230, 221, 204;
   --bs-tertiary-color: rgba(25.5, 25, 24.2, 0.5);
   --bs-tertiary-color-rgb: 25, 25, 24;
-  --bs-tertiary-bg: rgb(229.5, 220.5, 204.3);
-  --bs-tertiary-bg-rgb: 230, 221, 204;
+  --bs-tertiary-bg: rgb(242.25, 232.75, 215.65);
+  --bs-tertiary-bg-rgb: 242, 233, 216;
   --bs-heading-color: inherit;
   --bs-link-color: #0d6efd;
   --bs-link-color-rgb: 13, 110, 253;
@@ -4310,7 +4310,7 @@ textarea.form-control-lg {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: var(--bs-body-bg);
+  --bs-card-bg: rgb(242.25, 232.75, 215.65);
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;

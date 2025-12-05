@@ -9,7 +9,16 @@ const ARTICLES = [
         description: "American social news and discussion site",
         location: "/article/Reddit"
     },
-
+    {
+        title: "Wikipedia",
+        description: "Free online crowdsourced encyclopedia",
+        location: "/article/Wikipedia"
+    },
+    {
+        title: "Bootstrap",
+        description: "Web design front-end",
+        location: "/article/Bootstrap"
+    }
 ];
 const MAX_SEARCH_ENTRIES = 4;
 
