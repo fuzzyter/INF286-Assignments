@@ -9,15 +9,13 @@ const ARTICLES = [
         description: "American social news and discussion site",
         location: "/article/Reddit"
     },
-    
+
 ];
 const MAX_SEARCH_ENTRIES = 4;
 
 const searchDiv = document.getElementById("search");
 const searchInput = document.getElementById("search-input");
 const searchDropdown = document.getElementById("search-dropdown");
-
-// handle enter press to pick first
 
 searchDiv.addEventListener("focusin", (event) => {
     if (!searchDiv.contains(event.relatedTarget)) {
@@ -51,13 +49,14 @@ function populateSearch(searchTerm) {
         if (article.title.toLowerCase().includes(lowerSearchTerm)
             || article.description.toLowerCase().includes(lowerSearchTerm)) {
             if (added > 0) {
-                const separator = document.createElement("hr");
+                const separator = document.createElement("li");
+                separator.innerHTML = `<hr class="dropdown-divider">`;
                 newDropdown.appendChild(separator);
             }
 
             const entry = document.createElement("li");
             entry.innerHTML = `
-                <a class="dropdown-item d-flex flex-row" href="${article.location}">
+                <a class="dropdown-item d-flex align-items-center" href="${article.location}">
                     <div class="me-2">
                         <img class="search-thumbnail" src="${article.location}/assets/thumbnail.png" alt="${article.title} Thumbnail">
                     </div>
@@ -79,3 +78,42 @@ function populateSearch(searchTerm) {
 
     searchDropdown.replaceChildren(...newDropdown.children);
 }
+
+function populateArticleNavigation() {
+    console.log("hi");
+    const articleContent = document.getElementById("article-content");
+    const mainList = document.getElementById("main-navigation-list");
+
+    let currentH2Entry = document.getElementById("top-navigation-entry");
+    let headers = articleContent.querySelectorAll('h2, h3');
+
+    for (const header of headers) {
+        // if the header doesn't have an ID, go to the next one
+        if (!header.id) {
+            continue;
+        }
+
+        let newEntry = document.createElement("li");
+        newEntry.innerHTML = `<a href="#${header.id}">${header.innerHTML}</a>`;
+
+        let destList = mainList;
+        if (header.tagName.toLowerCase() === "h3") {
+            const subListArray = currentH2Entry.getElementsByTagName("ul");
+            if (subListArray.length > 0) {
+                // get existing sublist
+                destList = subListArray[0];
+            } else {
+                // create and add sublist
+                destList = document.createElement("ul");
+                destList.classList.add("navigation-list");
+                currentH2Entry.appendChild(destList);
+            }
+        } else {
+            currentH2Entry = newEntry;
+        }
+
+        destList.appendChild(newEntry);
+    }
+}
+
+populateArticleNavigation();

@@ -31,3 +31,20 @@
 .search-thumbnail {
     height: 50px;
 }
+
+.w-80 {
+    width: 80%;
+}
+
+/* override bootstrap's decision to make dropdowns not wrap */
+.dropdown-item {
+    white-space: inherit !important;
+}
+
+.navigation-list {
+    list-style-type: none;
+}
+
+h2 {
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+}
