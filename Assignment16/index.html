@@ -4,84 +4,51 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wiki Archive Project — Home</title>
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap.css">
-    <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background-color: #f5f5f7;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #0d6efd 0%, #053b94 100%);
-            color: #fff;
-            padding: 5rem 0;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            transition: 0.3s;
-        }
-
-        .wiki-logo {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: #0d6efd;
-            margin-right: 0.5rem;
-        }
-    </style>
+    <title>Wikipedia, The Free Encyclopedia</title>
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/main.css" />
+    <script src="/article/assets/main.js" defer></script>
 </head>
 
 <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
-                <span class="wiki-logo">W</span> Wiki Archive Project
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active fw-semibold" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Our Wiki</a></li>
-                    <li class="nav-item"><a class="nav-link" href="article4.html">Featured Article</a></li>
-                    <li class="nav-item"><a class="nav-link" href="preferences.html">Preferences</a></li>
-                    <li class="nav-item"><a class="nav-link" href="donate.html">Donate</a></li>
-                </ul>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand mx-auto py-1 my-0">
+        <a id="logo" class="navbar-brand mx-2 d-flex align-items-center" href="/index.html">
+            <img src="/assets/logo.png" alt="Brand Logo" class="logo-img me-2" />
+            <div class="d-flex flex-column">
+                <span class="logo-top-text">WikipediA</span>
+                <span class="d-inline-flex justify-content-center logo-bottom-text">The Free Encyclopedia</span>
             </div>
+        </a>
+    
+        <div id="search" class="dropdown mx-auto flex-grow-1" tabindex="-1">
+            <input id="search-input" class="form-control" type="search" autocomplete="off" autocorrect="off"
+                spellcheck="false" autocapitalize="off" placeholder="Search" aria-label="Search" aria-expanded="false" />
+            <ul id="search-dropdown" class="dropdown-menu w-100">
+                <!-- this gets filled in by javascript -->
+            </ul>
         </div>
+    
+        <a class="btn btn-outline-success mx-2" href="/donate.html">Donate</a>
+        <a class="btn btn-outline-primary mx-2" href="/preferences.html">Preferences</a>
     </nav>
 
     <!-- HERO -->
-    <section class="hero text-center">
+    <section class="hero text-center mt-5 mb-3">
         <div class="container">
             <h1 class="fw-bold display-5">Free Knowledge, Modern Design</h1>
             <p class="lead mt-3 mb-4">
                 A redesign of the early 2001 Wikipedia homepage with clearer structure, better readability, and helpful
                 guidance for new users.
             </p>
-
-            <!-- SEARCH BAR -->
-            <form class="d-flex justify-content-center" role="search">
-                <input type="text" class="form-control w-50 me-2" placeholder="Search articles, topics, and categories…"
-                    aria-label="Search" />
-                <button class="btn btn-light fw-semibold px-4" type="submit">Search</button>
-            </form>
         </div>
     </section>
 
     <!-- FEATURES -->
     <section class="py-5">
         <div class="container text-center">
-            <h2 class="fw-bold mb-4">Explore the Wiki Archive</h2>
+            <h2 class="fw-bold mb-4">Explore the Wiki</h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="p-4 bg-white shadow-sm rounded feature-card h-100">
@@ -90,7 +57,7 @@
                             Browse curated articles inspired by the original 2001 Wikipedia experience, updated with
                             modern UX.
                         </p>
-                        <a href="article1.html" class="fw-semibold text-primary">Go to Article 1 →</a>
+                        <a href="article/Wikipedia/" class="fw-semibold text-primary">Go to Featured Article →</a>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -99,7 +66,7 @@
                         <p class="text-muted">
                             Talk pages simulate how editors collaborate, suggest changes, and improve content together.
                         </p>
-                        <a href="talk-article1.html" class="fw-semibold text-primary">Visit Talk Pages →</a>
+                        <a href="article/League_of_Legends/discussion.html" class="fw-semibold text-primary">Visit Featured Talk Page →</a>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -141,11 +108,8 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-4 bg-white border-top text-center">
-        <div class="container">
-            <p class="mb-0">© 2025 Wiki Archive Project — Student Redesign of 2001 Wikipedia</p>
-            <small class="text-muted">Non-commercial, educational use only.</small>
-        </div>
+    <footer class="container text-center py-3">
+        <p>© 2025 INF286 Group - Made with love</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
